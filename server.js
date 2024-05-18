@@ -10,6 +10,7 @@ app.use('/api/users/' , userRoute)
 app.use('/api/transactions/' , transactionsRoute)
 dbConnect();
 app.use(express.static(path.join(__dirname, './client/build')))
+app.use(cors));
 app.get('*' , (req, res)=>{
     res.sendFile(path.join(__dirname, './client/build/index.html'))
 })
